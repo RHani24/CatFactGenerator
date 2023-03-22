@@ -17,13 +17,13 @@ async function getQuote() {
   console.log (response);
   const data = await response.json();
   console.log(data);
-  document .getElementById("quote").innerText = data.data[0];
+  document.querySelector("#quote").textContent = data.data[0];
 
   let newQuote = document.querySelector("#new-quote-button");
    newQuote.addEventListener("click", getQuote);
 
         let newListItem = document.createElement("li");
-        newListItem.innerText = data.data[0];
+        newListItem.innerText = data.data[0]
         let list = document.querySelector("ol");
         list.appendChild(newListItem);
       };
